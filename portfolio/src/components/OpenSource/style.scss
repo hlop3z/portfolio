@@ -1,0 +1,36 @@
+$NAME: "plugin_one__OpenSource";
+
+.#{$NAME} {
+  .project-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+  }
+  .project-item {
+    flex: 1 1 calc(33.333% - 40px); /* Three columns */
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+  .project-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .project-item p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  /* Hover Effect */
+  .project-item:hover {
+    transform: translateY(-10px);
+  }
+}

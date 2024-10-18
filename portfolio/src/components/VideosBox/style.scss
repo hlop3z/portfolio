@@ -1,0 +1,55 @@
+$NAME: "plugin_one__VideosBox";
+
+.#{$NAME} {
+  /* Video Gallery Styles */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  gap: 20px;
+
+  .video-item {
+    flex: 1 1 calc(33.333% - 40px); /* Three columns */
+    box-sizing: border-box;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    border-radius: 8px;
+    text-align: center;
+  }
+
+  .video-item iframe {
+    width: 100%;
+    height: 250px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+  }
+
+  .video-item h2 {
+    font-size: 1.5rem;
+    color: #333;
+  }
+
+  .video-item p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+
+  /* Hover Effect */
+  .video-item:hover {
+    transform: translateY(-10px);
+  }
+
+  /* Responsive Design */
+  @media (max-width: 900px) {
+    .video-item {
+      flex: 1 1 calc(50% - 40px); /* Two columns for tablets */
+    }
+  }
+
+  @media (max-width: 600px) {
+    .video-item {
+      flex: 1 1 100%; /* One column for mobile */
+    }
+  }
+}

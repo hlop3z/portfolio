@@ -459,7 +459,7 @@ xtyle.view("/", F);
 xtyle.view("/open-source", G);
 xtyle.view("/portfolio", $);
 xtyle.use(O);
-const z = { history: !1, baseURL: null };
+const z = { history: !1, baseURL: "portfolio" };
 xtyle.init(E, document.body, z);
 console.log("Actions: ", xtyle.action.keys());
 console.log("Directives: ", Object.keys(xtyle.allDirectives));

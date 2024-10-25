@@ -16,7 +16,7 @@ xtyle.use(Plugin);
  */
 const router = {
   history: false,
-  baseURL: null,
+  baseURL: "portfolio",
 };
 
 /**

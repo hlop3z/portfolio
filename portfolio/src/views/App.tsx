@@ -9,7 +9,7 @@ const { Layout, Button } = xtylist;
 
 const LINKS = [
   { text: "Introduction", url: "/" },
-  { text: "Portfolio", url: "/portfolio" },
+  { text: "Videos", url: "/videos" },
   { text: "Open Source", url: "/open-source" },
 ];
 

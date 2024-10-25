@@ -4,4 +4,4 @@ import Portfolio from "./Portfolio";
 
 xtyle.view("/", Preview);
 xtyle.view("/open-source", OpenSource);
-xtyle.view("/portfolio", Portfolio);
+xtyle.view("/videos", Portfolio);

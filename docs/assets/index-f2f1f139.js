@@ -298,7 +298,7 @@ const O = Object.freeze(
   { Layout: i, Button: j } = xtylist,
   B = [
     { text: "Introduction", url: "/" },
-    { text: "Portfolio", url: "/portfolio" },
+    { text: "Videos", url: "/videos" },
     { text: "Open Source", url: "/open-source" },
   ];
 xtyle.util.inject(`
@@ -457,7 +457,7 @@ function $() {
 }
 xtyle.view("/", F);
 xtyle.view("/open-source", G);
-xtyle.view("/portfolio", $);
+xtyle.view("/videos", $);
 xtyle.use(O);
 const z = { history: !1, baseURL: "portfolio" };
 xtyle.init(E, document.body, z);

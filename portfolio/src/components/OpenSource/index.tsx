@@ -2,7 +2,8 @@ const $NAME = "plugin_one__OpenSource";
 
 import "./style.scss";
 
-const GITHUB = "https://github.com/hlop3z/";
+// const GITHUB = "https://github.com/hlop3z/";
+const GITHUB = "https://hlop3z.github.io/";
 
 export default function OpenSource(props) {
   return (
@@ -16,7 +17,7 @@ export default function OpenSource(props) {
             <div
               x-html
               class="project-item bd-a"
-              on-click={() => console.log(GITHUB)}
+              on-click={() => window.open(`${GITHUB}${item.url}`)}
             >
               <h2>{item.title}</h2>
               <p>{item.details}</p>

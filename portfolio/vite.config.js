@@ -9,6 +9,7 @@ export default defineConfig({
   define: {
     packageName: packageName,
   },
+  /*
   build: {
     lib: {
       entry: resolve(__dirname, "src/index.ts"),
@@ -17,4 +18,5 @@ export default defineConfig({
       formats: ["es"],
     },
   },
+  */
 });

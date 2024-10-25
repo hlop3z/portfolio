@@ -13,6 +13,13 @@ const LINKS = [
   { text: "Open Source", url: "/open-source" },
 ];
 
+xtyle.util.inject(`
+body, .bg-gradient {
+    background-color: #0093e9;
+    background-image: linear-gradient(63deg, #0093e9 0%, #80d0c7 100%);
+  }
+  `);
+
 // @ts-ignore
 export default function Application({ route, search, arg }) {
   return (
@@ -68,7 +75,7 @@ export default function Application({ route, search, arg }) {
         </Layout.Right>
       }
     >
-      <Layout.Main theme-color="white" class="oy-a">
+      <Layout.Main class="oy-a">
         <xtyle.router.views />
       </Layout.Main>
     </Layout.App>

@@ -8,22 +8,51 @@ import * as Project from "../components/index.ts";
 const { Grid } = xtylist;
 
 const PY_PROJECTS = [
-  { title: "fastberry", url: "fastberry", details: "FastAPI with GraphQL" },
-  { title: "spoc", url: "spoc", details: "FastAPI with GraphQL" },
   {
-    title: "dbcontroller",
-    url: "dbcontroller",
-    details: "FastAPI with GraphQL",
+    title: "FastBerry",
+    url: "fastberry",
+    details: "FastAPI with GraphQL and SQL or Mongo",
   },
-  { title: "zmag", url: "zmag", details: "FastAPI with GraphQL" },
-  { title: "dinja", url: "dinja", details: "FastAPI with GraphQL" },
-  { title: "sqlow", url: "dinja", details: "FastAPI with GraphQL" },
+  { title: "Spoc", url: "spoc", details: "Foundational framework" },
+  {
+    title: "DBController",
+    url: "dbcontroller",
+    details: "SQL and Mongo database controller",
+  },
+  { title: "Zmag", url: "zmag", details: "ZeroMQ with GraphQL" },
 ];
+
 const JS_PROJECTS = [
-  { title: "xtyle", url: "fastberry", details: "FastAPI with GraphQL" },
-  { title: "xtyle-css", url: "fastberry", details: "FastAPI with GraphQL" },
-  { title: "vueky", url: "fastberry", details: "FastAPI with GraphQL" },
-  { title: "xkin", url: "fastberry", details: "FastAPI with GraphQL" },
+  {
+    title: "Xtyle",
+    url: "xtyle",
+    details: "Effortlessly extend preact functions globally ",
+  },
+  {
+    title: "Xtyle-CSS",
+    url: "xtyle-css",
+    details: "Colorless and without components framework",
+  },
+  {
+    title: "Xtylist",
+    url: "xtylist",
+    details: "UI toolkit using xtyle and xtyle-css",
+  },
+  {
+    title: "Vueky",
+    url: "vueky",
+    details: "Standalone extension of petite-vue",
+  },
+  { title: "Xkin", url: "xkin", details: "Lightweight alternative to jQuery" },
+];
+
+const ED_PROJECTS = [
+  {
+    title: "Interviews",
+    url: "interviews-python",
+    details:
+      "Computer science fundamentals and software development and algorithms",
+  },
 ];
 
 // @ts-ignore
@@ -40,6 +69,12 @@ export default function Main() {
         <Project.OpenSource
           title="Frontend"
           items={JS_PROJECTS}
+        ></Project.OpenSource>
+      </Grid>
+      <Grid cols="12">
+        <Project.OpenSource
+          title="Cheat Sheet"
+          items={ED_PROJECTS}
         ></Project.OpenSource>
       </Grid>
     </Grid>

@@ -103,7 +103,7 @@ const M = "plugin_one__About",
 function y(t) {
   return h(
     "div",
-    { "x-html": !0, ...t, class: [M, t.class] },
+    { "x-html": !0, ...t, class: [M, t.class, "oy-a"] },
     h(
       u,
       { row: !0, "gap-x": "2", "gap-y": "2", class: "my-2 mx-4" },
@@ -435,7 +435,7 @@ function Q({ route: t, search: e, arg: i }) {
         "Right"
       ),
     },
-    h(s.Main, { class: "oy-a" }, h(xtyle.router.views, null))
+    h(s.Main, null, h(xtyle.router.views, null))
   );
 }
 function R() {
@@ -494,7 +494,7 @@ const { Grid: r } = xtylist,
 function D() {
   return h(
     r,
-    { row: !0, "gap-x": "2", "gap-y": "2", class: "" },
+    { row: !0, "gap-x": "2", "gap-y": "2", class: "oy-a" },
     h(r, { cols: "12", lg: "6", xl: "6" }, h(c, { title: "Python", items: z })),
     h(
       r,
@@ -508,7 +508,7 @@ const { Grid: p } = xtylist;
 function U() {
   return h(
     p,
-    { row: !0, "gap-x": "2", "gap-y": "2" },
+    { row: !0, "gap-x": "2", "gap-y": "2", class: "oy-a" },
     h(
       p,
       { cols: "12" },

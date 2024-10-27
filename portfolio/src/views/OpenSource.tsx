@@ -58,7 +58,7 @@ const ED_PROJECTS = [
 // @ts-ignore
 export default function Main() {
   return (
-    <Grid row gap-x="2" gap-y="2" class="">
+    <Grid row gap-x="2" gap-y="2" class="oy-a">
       <Grid cols="12" lg="6" xl="6">
         <Project.OpenSource
           title="Python"

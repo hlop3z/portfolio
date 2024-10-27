@@ -33,7 +33,7 @@ const SKILLS = [
 
 export default function About(props) {
   return (
-    <div x-html {...props} class={[$NAME, props.class]}>
+    <div x-html {...props} class={[$NAME, props.class, "oy-a"]}>
       <Grid row gap-x="2" gap-y="2" class="my-2 mx-4">
         <Grid cols="12" lg="6" xl="6">
           {/* Skills Section */}

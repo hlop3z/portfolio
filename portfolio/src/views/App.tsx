@@ -76,7 +76,7 @@ export default function Application({ route, search, arg }) {
         </Layout.Right>
       }
     >
-      <Layout.Main class="oy-a">
+      <Layout.Main>
         <xtyle.router.views />
       </Layout.Main>
     </Layout.App>

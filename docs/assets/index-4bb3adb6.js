@@ -1,14 +1,14 @@
 (function () {
   const e = document.createElement("link").relList;
   if (e && e.supports && e.supports("modulepreload")) return;
-  for (const o of document.querySelectorAll('link[rel="modulepreload"]')) i(o);
+  for (const o of document.querySelectorAll('link[rel="modulepreload"]')) n(o);
   new MutationObserver((o) => {
     for (const l of o)
       if (l.type === "childList")
-        for (const c of l.addedNodes)
-          c.tagName === "LINK" && c.rel === "modulepreload" && i(c);
+        for (const a of l.addedNodes)
+          a.tagName === "LINK" && a.rel === "modulepreload" && n(a);
   }).observe(document, { childList: !0, subtree: !0 });
-  function u(o) {
+  function i(o) {
     const l = {};
     return (
       o.integrity && (l.integrity = o.integrity),
@@ -21,10 +21,10 @@
       l
     );
   }
-  function i(o) {
+  function n(o) {
     if (o.ep) return;
     o.ep = !0;
-    const l = u(o);
+    const l = i(o);
     fetch(o.href, l);
   }
 })();
@@ -68,7 +68,7 @@ function L() {
   });
 }
 const M = "plugin_one__About",
-  { Grid: a } = xtylist,
+  { Grid: u } = xtylist,
   P = [
     {
       category: "Languages",
@@ -100,15 +100,60 @@ const M = "plugin_one__About",
     },
     { category: "Cloud", items: ["AWS", "Docker", "Azure", "Google Cloud"] },
   ];
-function g(t) {
+function y(t) {
   return h(
     "div",
     { "x-html": !0, ...t, class: [M, t.class] },
     h(
-      a,
+      u,
       { row: !0, "gap-x": "2", "gap-y": "2", class: "my-2 mx-4" },
       h(
-        a,
+        u,
+        { cols: "12", lg: "6", xl: "6" },
+        h(
+          "div",
+          { class: "skills-section" },
+          h(
+            "div",
+            { class: "ta-c" },
+            h("span", { class: "ts-2 td-b" }, "Skills")
+          ),
+          h(
+            "div",
+            {
+              class: "mt-2 ts-4 sb-8 e-ns zoom-hover bd-a bw-1 oy-h ox-h br-2",
+            },
+            h(
+              "table",
+              { class: "skills-table" },
+              h(
+                "thead",
+                null,
+                h(
+                  "tr",
+                  null,
+                  h("th", null, "Category"),
+                  h("th", null, "Skills")
+                )
+              ),
+              h(
+                "tbody",
+                null,
+                P.map((e) =>
+                  h(
+                    "tr",
+                    { key: e.category },
+                    h("td", { class: "td-b" }, e.category),
+                    h("td", null, e.items.join(", "))
+                  )
+                )
+              )
+            )
+          )
+        )
+      ),
+      h(
+        u,
         { cols: "12", lg: "6", xl: "6" },
         h(
           "div",
@@ -120,69 +165,40 @@ function g(t) {
           {
             "x-html": !0,
             "theme-color": "white",
-            class: "pa-5 br-2 sb-8 e-ns zoom-hover mt-2",
+            class: "pa-5 br-2 sb-8 e-ns zoom-hover mt-2 bd-a bw-1",
           },
           h(
             "p",
             { class: "ts-4 text py-2 px-3" },
-            "I'm a seasoned Full-Stack Developer with a passion for building dynamic and responsive web applications. With over 8 years of experience in the tech industry, I've honed my skills in both front-end and back-end development, creating seamless and efficient digital experiences. I specialize in",
+            "I'm a seasoned Full-Stack Developer with a passion for building dynamic and responsive web applications. With over 8 years of experience in the tech industry, I've honed my skills in both",
             " ",
-            h("strong", null, "Python"),
+            h("strong", null, "front-end"),
             " and",
-            h("strong", null, " JavaScript/TypeScript"),
-            ", and have a proven track record of delivering high-quality projects on time and within budget. My expertise extends to designing and implementing",
             " ",
-            h(
-              "strong",
-              null,
-              "RESTful APIs, managing databases, and optimizing performance to ensure scalability and reliability"
-            ),
-            ". My journey in tech has been driven by a desire to solve complex problems and innovate. Whether it's developing a new feature, refactoring existing code, or collaborating with cross-functional teams, I bring a proactive and solution-oriented mindset to every project. Beyond coding, I'm an advocate for clean code practices and continuous learning."
-          )
-        )
-      ),
-      h(
-        a,
-        { cols: "12", lg: "6", xl: "6" },
-        h(
-          "div",
-          { class: "skills-section" },
-          h(
-            "div",
-            { class: "ta-c" },
-            h("span", { class: "ts-2 td-b" }, "Skills")
-          ),
-          h(
-            "table",
-            { class: "skills-table mt-2 ts-4 sb-8 br-2 e-ns zoom-hover" },
-            h(
-              "thead",
-              null,
-              h("tr", null, h("th", null, "Category"), h("th", null, "Skills"))
-            ),
-            h(
-              "tbody",
-              null,
-              P.map((e) =>
-                h(
-                  "tr",
-                  { key: e.category },
-                  h("td", { class: "td-b" }, e.category),
-                  h("td", null, e.items.join(", "))
-                )
-              )
-            )
+            h("strong", null, "back-end development"),
+            ", creating seamless and efficient digital experiences."
           )
         )
       )
     )
   );
 }
-const A = "./me.png",
+const A = "./me_2.jpg",
   _ = "plugin_one__Intro",
   { Button: C, Grid: d } = xtylist;
 function m(t) {
-  const e = "oy-h ox-h d-f dy-ce dx-ce eh-100p";
+  const e = "oy-h ox-h d-f dy-ce dx-ce eh-100p",
+    i = () =>
+      h(
+        C,
+        {
+          variant: "outlined",
+          size: "lg",
+          class: "mt-2",
+          "on-click": () => xtyle.router.go("/about"),
+        },
+        "About Me"
+      );
   return h(
     "div",
     { "x-html": !0, ...t, class: [_, t.class, e] },
@@ -205,33 +221,29 @@ function m(t) {
               "I'm ",
               h("strong", null, "Hector M. Lopez")
             ),
-            h(
-              C,
-              {
-                variant: "outlined",
-                size: "lg",
-                class: "mt-2",
-                "on-click": () => xtyle.router.go("/about"),
-              },
-              "About Me"
-            )
+            ["xl", "lg"].includes(xtyle.device.size) ? h(i, null) : null
           )
         ),
         h(
           d,
           { cols: "12", lg: "6", xl: "6", class: "d-f dy-ce dx-ce" },
-          h("img", { src: A, class: "mt-n2" })
+          h("img", { src: A, class: "mt-n2 br-100p sb-24 ml-4" }),
+          h(
+            "div",
+            { class: "d-f df-col" },
+            ["xl", "lg"].includes(xtyle.device.size) ? null : h(i, null)
+          )
         )
       )
     )
   );
 }
-const I = "plugin_one__OpenSource",
-  O = "https://hlop3z.github.io/";
-function r(t) {
+const $ = "plugin_one__OpenSource",
+  B = "https://hlop3z.github.io/";
+function c(t) {
   return h(
     "div",
-    { "x-html": !0, ...t, class: [I, t.class] },
+    { "x-html": !0, ...t, class: [$, t.class] },
     h(
       "div",
       { class: "ta-c mt-2 mb-4" },
@@ -247,7 +259,7 @@ function r(t) {
             {
               "x-html": !0,
               class: "project-item bd-a",
-              "on-click": () => window.open(`${O}${e.url}`),
+              "on-click": () => window.open(`${B}${e.url}`),
             },
             h("h2", null, e.title),
             h("p", null, e.details)
@@ -257,8 +269,8 @@ function r(t) {
     )
   );
 }
-const $ = "plugin_one__VideosBox",
-  B = [
+const O = "plugin_one__VideosBox",
+  j = [
     {
       title: "google search",
       description: "Exploring advanced Google search techniques and tips.",
@@ -290,10 +302,10 @@ const $ = "plugin_one__VideosBox",
       link: "https://www.youtube.com/embed/r_m5WJkt5xA?si=n08UE5Nc1BnCUR9b",
     },
   ].reverse();
-function y(t) {
+function g(t) {
   return h(
     "section",
-    { "x-html": !0, ...t, class: [$, t.class] },
+    { "x-html": !0, ...t, class: [O, t.class] },
     h("x-slot", {
       "x-for": (e) =>
         h(
@@ -313,11 +325,11 @@ function y(t) {
           h("h2", { class: "tt-t" }, e.title),
           h("p", null, e.description)
         ),
-      "x-in": B,
+      "x-in": j,
     })
   );
 }
-function E(t, e) {
+function I(t, e) {
   return (
     console.log("Plugin Name", "plugin_one"),
     console.log("The Plugin", t),
@@ -334,15 +346,15 @@ function E(t, e) {
     }
   );
 }
-const j = Object.freeze(
+const E = Object.freeze(
     Object.defineProperty(
       {
         __proto__: null,
-        About: g,
+        About: y,
         Intro: m,
-        OpenSource: r,
-        VideosBox: y,
-        install: E,
+        OpenSource: c,
+        VideosBox: g,
+        install: I,
       },
       Symbol.toStringTag,
       { value: "Module" }
@@ -350,9 +362,10 @@ const j = Object.freeze(
   ),
   { Layout: s, Button: F } = xtylist,
   G = [
-    { text: "Introduction", url: "/" },
+    { text: "Intro", url: "/" },
+    { text: "About", url: "/about" },
+    { text: "Projects", url: "/projects" },
     { text: "Videos", url: "/videos" },
-    { text: "Open Source", url: "/open-source" },
   ];
 xtyle.util.inject(`
 body, .bg-gradient {
@@ -360,7 +373,7 @@ body, .bg-gradient {
     background-image: linear-gradient(63deg, #0093e9 0%, #80d0c7 100%);
   }
   `);
-function R({ route: t, search: e, arg: u }) {
+function Q({ route: t, search: e, arg: i }) {
   return h(
     s.App,
     {
@@ -379,15 +392,15 @@ function R({ route: t, search: e, arg: u }) {
           null,
           h("x-slot", {
             "x-in": G,
-            "x-for": (i) =>
+            "x-for": (n) =>
               h(
                 F,
                 {
                   stack: !0,
                   color: null,
-                  "on-click": () => xtyle.router.go(i.url),
+                  "on-click": () => xtyle.router.go(n.url),
                 },
-                i.text
+                n.text
               ),
           })
         ),
@@ -425,11 +438,11 @@ function R({ route: t, search: e, arg: u }) {
     h(s.Main, { class: "oy-a" }, h(xtyle.router.views, null))
   );
 }
-function T() {
+function R() {
   return h(m, null);
 }
-const { Grid: n } = xtylist,
-  Q = [
+const { Grid: r } = xtylist,
+  z = [
     {
       title: "FastBerry",
       url: "fastberry",
@@ -443,7 +456,7 @@ const { Grid: n } = xtylist,
     },
     { title: "Zmag", url: "zmag", details: "ZeroMQ with GraphQL" },
   ],
-  z = [
+  T = [
     {
       title: "Xtyle",
       url: "xtyle",
@@ -480,19 +493,19 @@ const { Grid: n } = xtylist,
   ];
 function D() {
   return h(
-    n,
+    r,
     { row: !0, "gap-x": "2", "gap-y": "2", class: "" },
-    h(n, { cols: "12", lg: "6", xl: "6" }, h(r, { title: "Python", items: Q })),
+    h(r, { cols: "12", lg: "6", xl: "6" }, h(c, { title: "Python", items: z })),
     h(
-      n,
+      r,
       { cols: "12", lg: "6", xl: "6" },
-      h(r, { title: "Frontend", items: z })
+      h(c, { title: "Frontend", items: T })
     ),
-    h(n, { cols: "12" }, h(r, { title: "Cheat Sheet", items: N }))
+    h(r, { cols: "12" }, h(c, { title: "Cheat Sheet", items: N }))
   );
 }
 const { Grid: p } = xtylist;
-function J() {
+function U() {
   return h(
     p,
     { row: !0, "gap-x": "2", "gap-y": "2" },
@@ -504,20 +517,20 @@ function J() {
         { class: "ta-c" },
         h("span", { class: "ts-2 td-b" }, "Full Stack")
       ),
-      h(y, { class: "py-4" })
+      h(g, { class: "py-4" })
     )
   );
 }
-function U() {
-  return h(g, null);
+function H() {
+  return h(y, null);
 }
-xtyle.view("/", T);
-xtyle.view("/open-source", D);
-xtyle.view("/videos", J);
-xtyle.view("/about", U);
-xtyle.use(j);
-const H = { history: !1, baseURL: "portfolio" };
-xtyle.init(R, document.body, H);
+xtyle.view("/", R);
+xtyle.view("/projects", D);
+xtyle.view("/videos", U);
+xtyle.view("/about", H);
+xtyle.use(E);
+const J = { history: !1, baseURL: "portfolio" };
+xtyle.init(Q, document.body, J);
 console.log("Actions: ", xtyle.action.keys());
 console.log("Directives: ", Object.keys(xtyle.allDirectives));
 console.log("Globals: ", xtyle.global);

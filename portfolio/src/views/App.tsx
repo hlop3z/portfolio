@@ -8,9 +8,10 @@
 const { Layout, Button } = xtylist;
 
 const LINKS = [
-  { text: "Introduction", url: "/" },
+  { text: "Intro", url: "/" },
+  { text: "About", url: "/about" },
+  { text: "Projects", url: "/projects" },
   { text: "Videos", url: "/videos" },
-  { text: "Open Source", url: "/open-source" },
 ];
 
 xtyle.util.inject(`

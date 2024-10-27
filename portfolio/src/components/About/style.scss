@@ -8,7 +8,6 @@ $NAME: "plugin_one__About";
   .skills-table {
     width: 100%;
     border-collapse: collapse;
-    margin-top: 10px;
   }
 
   .skills-table th,
@@ -42,5 +41,14 @@ $NAME: "plugin_one__About";
     100% {
       transform: scale(1); /* Return to normal size */
     }
+  }
+
+  .disco {
+    background: black !important;
+    color: white !important;
+  }
+  .disco:hover {
+    background: white !important;
+    color: black !important;
   }
 }

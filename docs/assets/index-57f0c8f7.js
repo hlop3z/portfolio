@@ -1,12 +1,12 @@
 (function () {
   const e = document.createElement("link").relList;
   if (e && e.supports && e.supports("modulepreload")) return;
-  for (const o of document.querySelectorAll('link[rel="modulepreload"]')) s(o);
+  for (const o of document.querySelectorAll('link[rel="modulepreload"]')) i(o);
   new MutationObserver((o) => {
     for (const l of o)
       if (l.type === "childList")
         for (const c of l.addedNodes)
-          c.tagName === "LINK" && c.rel === "modulepreload" && s(c);
+          c.tagName === "LINK" && c.rel === "modulepreload" && i(c);
   }).observe(document, { childList: !0, subtree: !0 });
   function u(o) {
     const l = {};
@@ -21,26 +21,26 @@
       l
     );
   }
-  function s(o) {
+  function i(o) {
     if (o.ep) return;
     o.ep = !0;
     const l = u(o);
     fetch(o.href, l);
   }
 })();
-const m = {},
-  y = {},
-  f = {},
+const f = {},
+  x = {},
   b = {},
-  x = { before: [], after: [] },
-  w = {
+  w = {},
+  v = { before: [], after: [] },
+  k = {
     before({ commit: t }) {
       t();
     },
     after({}) {},
   },
-  v = {};
-function k() {
+  S = {};
+function L() {
   xtyle.theme.set({
     theme: {
       none: "transparent",
@@ -67,9 +67,8 @@ function k() {
     },
   });
 }
-const S = "./me.jpg",
-  L = "plugin_one__Intro",
-  { Grid: n } = xtylist,
+const M = "plugin_one__About",
+  { Grid: a } = xtylist,
   P = [
     {
       category: "Languages",
@@ -101,59 +100,58 @@ const S = "./me.jpg",
     },
     { category: "Cloud", items: ["AWS", "Docker", "Azure", "Google Cloud"] },
   ];
-function p(t) {
+function g(t) {
   return h(
     "div",
-    { "x-html": !0, ...t, class: [L, t.class] },
+    { "x-html": !0, ...t, class: [M, t.class] },
     h(
-      n,
+      a,
       { row: !0, "gap-x": "2", "gap-y": "2", class: "my-2 mx-4" },
       h(
-        n,
-        { cols: "12" },
+        a,
+        { cols: "12", lg: "6", xl: "6" },
         h(
           "div",
-          { class: "d-f dx-ce" },
-          h("img", {
-            src: S,
-            class: "br-100p sb-12 spin",
-            height: "250px",
-            width: "250px",
-          })
-        )
-      ),
-      h(
-        n,
-        { cols: "12", lg: "6", xl: "6" },
-        h("div", { class: "ta-c" }, h("span", { class: "ts-2" }, "About Me")),
+          { class: "ta-c" },
+          h("span", { class: "ts-2 td-b" }, "About Me")
+        ),
         h(
-          "p",
+          "div",
           {
             "x-html": !0,
             "theme-color": "white",
-            class: "ts-4 text mt-2 py-2 px-3 br-2 sb-8 e-ns zoom-hover",
+            class: "pa-5 br-2 sb-8 e-ns zoom-hover mt-2",
           },
-          "I’m a seasoned Full-Stack Developer with a passion for building dynamic and responsive web applications. With over 8 years of experience in the tech industry, I’ve honed my skills in both front-end and back-end development, creating seamless and efficient digital experiences. I specialize in ",
-          h("strong", null, "Python"),
-          " and",
-          h("strong", null, " JavaScript/TypeScript"),
-          ", and have a proven track record of delivering high-quality projects on time and within budget. My expertise extends to designing and implementing",
-          " ",
           h(
-            "strong",
-            null,
-            "RESTful APIs, managing databases, and optimizing performance to ensure scalability and reliability"
-          ),
-          ". My journey in tech has been driven by a desire to solve complex problems and innovate. Whether it’s developing a new feature, refactoring existing code, or collaborating with cross-functional teams, I bring a proactive and solution-oriented mindset to every project. Beyond coding, I’m an advocate for clean code practices and continuous learning."
+            "p",
+            { class: "ts-4 text py-2 px-3" },
+            "I'm a seasoned Full-Stack Developer with a passion for building dynamic and responsive web applications. With over 8 years of experience in the tech industry, I've honed my skills in both front-end and back-end development, creating seamless and efficient digital experiences. I specialize in",
+            " ",
+            h("strong", null, "Python"),
+            " and",
+            h("strong", null, " JavaScript/TypeScript"),
+            ", and have a proven track record of delivering high-quality projects on time and within budget. My expertise extends to designing and implementing",
+            " ",
+            h(
+              "strong",
+              null,
+              "RESTful APIs, managing databases, and optimizing performance to ensure scalability and reliability"
+            ),
+            ". My journey in tech has been driven by a desire to solve complex problems and innovate. Whether it's developing a new feature, refactoring existing code, or collaborating with cross-functional teams, I bring a proactive and solution-oriented mindset to every project. Beyond coding, I'm an advocate for clean code practices and continuous learning."
+          )
         )
       ),
       h(
-        n,
+        a,
         { cols: "12", lg: "6", xl: "6" },
         h(
           "div",
           { class: "skills-section" },
-          h("div", { class: "ta-c" }, h("span", { class: "ts-2" }, "Skills")),
+          h(
+            "div",
+            { class: "ta-c" },
+            h("span", { class: "ts-2 td-b" }, "Skills")
+          ),
           h(
             "table",
             { class: "skills-table mt-2 ts-4 sb-8 br-2 e-ns zoom-hover" },
@@ -180,12 +178,60 @@ function p(t) {
     )
   );
 }
-const M = "plugin_one__OpenSource",
-  C = "https://hlop3z.github.io/";
-function a(t) {
+const A = "./me.png",
+  _ = "plugin_one__Intro",
+  { Button: C, Grid: d } = xtylist;
+function m(t) {
+  const e = "oy-h ox-h d-f dy-ce dx-ce eh-100p";
   return h(
     "div",
-    { "x-html": !0, ...t, class: [M, t.class] },
+    { "x-html": !0, ...t, class: [_, t.class, e] },
+    h(
+      "div",
+      { class: "d-f dx-ce dy-ce" },
+      h(
+        d,
+        { row: !0, "gap-x": "2", "gap-y": "2", class: "my-2 mx-4" },
+        h(
+          d,
+          { cols: "12", lg: "6", xl: "6", class: "d-f dy-ce dx-ce" },
+          h(
+            "div",
+            { class: "d-f df-col" },
+            h("div", { class: "welcome-text" }, "Welcome everyone"),
+            h(
+              "div",
+              { class: "name-title" },
+              "I'm ",
+              h("strong", null, "Hector M. Lopez")
+            ),
+            h(
+              C,
+              {
+                variant: "outlined",
+                size: "lg",
+                class: "mt-2",
+                "on-click": () => xtyle.router.go("/about"),
+              },
+              "About Me"
+            )
+          )
+        ),
+        h(
+          d,
+          { cols: "12", lg: "6", xl: "6", class: "d-f dy-ce dx-ce" },
+          h("img", { src: A, class: "mt-n2" })
+        )
+      )
+    )
+  );
+}
+const I = "plugin_one__OpenSource",
+  O = "https://hlop3z.github.io/";
+function r(t) {
+  return h(
+    "div",
+    { "x-html": !0, ...t, class: [I, t.class] },
     h(
       "div",
       { class: "ta-c mt-2 mb-4" },
@@ -201,7 +247,7 @@ function a(t) {
             {
               "x-html": !0,
               class: "project-item bd-a",
-              "on-click": () => window.open(`${C}${e.url}`),
+              "on-click": () => window.open(`${O}${e.url}`),
             },
             h("h2", null, e.title),
             h("p", null, e.details)
@@ -211,8 +257,8 @@ function a(t) {
     )
   );
 }
-const I = "plugin_one__VideosBox",
-  _ = [
+const $ = "plugin_one__VideosBox",
+  B = [
     {
       title: "google search",
       description: "Exploring advanced Google search techniques and tips.",
@@ -244,10 +290,10 @@ const I = "plugin_one__VideosBox",
       link: "https://www.youtube.com/embed/r_m5WJkt5xA?si=n08UE5Nc1BnCUR9b",
     },
   ].reverse();
-function g(t) {
+function y(t) {
   return h(
     "section",
-    { "x-html": !0, ...t, class: [I, t.class] },
+    { "x-html": !0, ...t, class: [$, t.class] },
     h("x-slot", {
       "x-for": (e) =>
         h(
@@ -267,36 +313,43 @@ function g(t) {
           h("h2", { class: "tt-t" }, e.title),
           h("p", null, e.description)
         ),
-      "x-in": _,
+      "x-in": B,
     })
   );
 }
-function A(t, e) {
+function E(t, e) {
   return (
     console.log("Plugin Name", "plugin_one"),
     console.log("The Plugin", t),
     console.log("Plugin Options", e),
-    k(),
+    L(),
     {
-      actions: m,
-      directives: y,
-      globals: f,
-      init: x,
-      models: b,
-      router: w,
-      store: v,
+      actions: f,
+      directives: x,
+      globals: b,
+      init: v,
+      models: w,
+      router: k,
+      store: S,
     }
   );
 }
-const O = Object.freeze(
+const j = Object.freeze(
     Object.defineProperty(
-      { __proto__: null, Intro: p, OpenSource: a, VideosBox: g, install: A },
+      {
+        __proto__: null,
+        About: g,
+        Intro: m,
+        OpenSource: r,
+        VideosBox: y,
+        install: E,
+      },
       Symbol.toStringTag,
       { value: "Module" }
     )
   ),
-  { Layout: i, Button: j } = xtylist,
-  B = [
+  { Layout: s, Button: F } = xtylist,
+  G = [
     { text: "Introduction", url: "/" },
     { text: "Videos", url: "/videos" },
     { text: "Open Source", url: "/open-source" },
@@ -307,9 +360,9 @@ body, .bg-gradient {
     background-image: linear-gradient(63deg, #0093e9 0%, #80d0c7 100%);
   }
   `);
-function E({ route: t, search: e, arg: u }) {
+function R({ route: t, search: e, arg: u }) {
   return h(
-    i.App,
+    s.App,
     {
       "theme-color": "danger",
       "clip-right": !0,
@@ -318,37 +371,37 @@ function E({ route: t, search: e, arg: u }) {
       "space-x": xtyle.device.mobile ? 1 : 3,
       "space-y": xtyle.device.mobile ? 1 : 3,
       "slot-header": h(
-        i.Header,
+        s.Header,
         { "theme-color": "white", elevation: "8" },
         h("span", null),
         h(
           "div",
           null,
           h("x-slot", {
-            "x-in": B,
-            "x-for": (s) =>
+            "x-in": G,
+            "x-for": (i) =>
               h(
-                j,
+                F,
                 {
                   stack: !0,
                   color: null,
-                  "on-click": () => xtyle.router.go(s.url),
+                  "on-click": () => xtyle.router.go(i.url),
                 },
-                s.text
+                i.text
               ),
           })
         ),
         h("span", null)
       ),
       "slot-footer": h(
-        i.Footer,
+        s.Footer,
         { "theme-color": "white", elevation: "8" },
         h("span", null),
         h("span", { class: "ts-3 td-b" }, "Hector M. Lopez"),
         h("span", null)
       ),
       "slot-left": h(
-        i.Left,
+        s.Left,
         {
           class: "ta-r",
           "theme-color": "white",
@@ -359,7 +412,7 @@ function E({ route: t, search: e, arg: u }) {
         "Left"
       ),
       "slot-right": h(
-        i.Right,
+        s.Right,
         {
           "theme-color": "white",
           elevation: "8",
@@ -369,14 +422,14 @@ function E({ route: t, search: e, arg: u }) {
         "Right"
       ),
     },
-    h(i.Main, { class: "oy-a" }, h(xtyle.router.views, null))
+    h(s.Main, { class: "oy-a" }, h(xtyle.router.views, null))
   );
 }
-function F() {
-  return h(p, null);
+function T() {
+  return h(m, null);
 }
-const { Grid: r } = xtylist,
-  R = [
+const { Grid: n } = xtylist,
+  Q = [
     {
       title: "FastBerry",
       url: "fastberry",
@@ -390,7 +443,7 @@ const { Grid: r } = xtylist,
     },
     { title: "Zmag", url: "zmag", details: "ZeroMQ with GraphQL" },
   ],
-  T = [
+  z = [
     {
       title: "Xtyle",
       url: "xtyle",
@@ -417,7 +470,7 @@ const { Grid: r } = xtylist,
       details: "Lightweight alternative to jQuery",
     },
   ],
-  Q = [
+  N = [
     {
       title: "Interviews",
       url: "interviews-python",
@@ -425,42 +478,46 @@ const { Grid: r } = xtylist,
         "Computer science fundamentals and software development and algorithms",
     },
   ];
-function G() {
+function D() {
   return h(
-    r,
+    n,
     { row: !0, "gap-x": "2", "gap-y": "2", class: "" },
-    h(r, { cols: "12", lg: "6", xl: "6" }, h(a, { title: "Python", items: R })),
+    h(n, { cols: "12", lg: "6", xl: "6" }, h(r, { title: "Python", items: Q })),
     h(
-      r,
+      n,
       { cols: "12", lg: "6", xl: "6" },
-      h(a, { title: "Frontend", items: T })
+      h(r, { title: "Frontend", items: z })
     ),
-    h(r, { cols: "12" }, h(a, { title: "Cheat Sheet", items: Q }))
+    h(n, { cols: "12" }, h(r, { title: "Cheat Sheet", items: N }))
   );
 }
-const { Grid: d } = xtylist;
-function $() {
+const { Grid: p } = xtylist;
+function J() {
   return h(
-    d,
+    p,
     { row: !0, "gap-x": "2", "gap-y": "2" },
     h(
-      d,
+      p,
       { cols: "12" },
       h(
         "div",
         { class: "ta-c" },
         h("span", { class: "ts-2 td-b" }, "Full Stack")
       ),
-      h(g, { class: "py-4" })
+      h(y, { class: "py-4" })
     )
   );
 }
-xtyle.view("/", F);
-xtyle.view("/open-source", G);
-xtyle.view("/videos", $);
-xtyle.use(O);
-const z = { history: !1, baseURL: "portfolio" };
-xtyle.init(E, document.body, z);
+function U() {
+  return h(g, null);
+}
+xtyle.view("/", T);
+xtyle.view("/open-source", D);
+xtyle.view("/videos", J);
+xtyle.view("/about", U);
+xtyle.use(j);
+const H = { history: !1, baseURL: "portfolio" };
+xtyle.init(R, document.body, H);
 console.log("Actions: ", xtyle.action.keys());
 console.log("Directives: ", Object.keys(xtyle.allDirectives));
 console.log("Globals: ", xtyle.global);

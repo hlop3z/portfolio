@@ -1,31 +1,16 @@
 $NAME: "plugin_one__Intro";
 
 .#{$NAME} {
-  .text {
-    line-height: 1.6em;
-  }
-
-  .skills-table {
+  img {
     width: 100%;
-    border-collapse: collapse;
-    margin-top: 10px;
+    height: auto;
   }
 
-  .skills-table th,
-  .skills-table td {
-    border: 1px solid #ddd;
-    padding: 12px;
-    text-align: left;
+  .welcome-text {
+    font-size: 3em;
   }
-
-  .skills-table th {
-    background-color: #f4f4f4;
-    font-weight: bold;
-    color: #333;
-  }
-
-  .skills-table {
-    background-color: #f9f9f9;
+  .name-title {
+    font-size: 5em;
   }
 
   .spin:hover {
@@ -41,19 +26,29 @@ $NAME: "plugin_one__Intro";
     }
   }
 
-  .zoom-hover:hover {
-    animation: zoomAnimation 0.6s ease forwards; /* Zoom and return animation */
+  /* Tablet view */
+  @media (max-width: 999px) {
+    img {
+      width: 500px;
+    }
+    .welcome-text {
+      font-size: 2em;
+    }
+    .name-title {
+      font-size: 3em;
+    }
   }
 
-  @keyframes zoomAnimation {
-    0% {
-      transform: scale(1); /* Start at normal size */
+  /* Mobile view */
+  @media (max-width: 480px) {
+    img {
+      width: 300px;
     }
-    50% {
-      transform: scale(1.02); /* Zoom in to 120% */
+    .welcome-text {
+      font-size: 2em;
     }
-    100% {
-      transform: scale(1); /* Return to normal size */
+    .name-title {
+      font-size: 3em;
     }
   }
 }

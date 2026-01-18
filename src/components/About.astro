@@ -1,0 +1,42 @@
+---
+import { profile } from "../data/content";
+---
+
+<section id="about" class="section-container">
+  <h2 class="section-title">
+    <span class="text-accent font-mono text-lg mr-2">01.</span>
+    About Me
+  </h2>
+
+  <div class="grid md:grid-cols-3 gap-10 items-start">
+    <!-- Text Content -->
+    <div class="md:col-span-2 space-y-4">
+      <p class="text-text-secondary text-lg leading-relaxed">
+        {profile.about}
+      </p>
+      {
+        profile.aboutExtended.map((paragraph) => (
+          <p class="text-text-secondary leading-relaxed">{paragraph}</p>
+        ))
+      }
+    </div>
+
+    <!-- Profile Image -->
+    <div class="relative group mx-auto md:mx-0">
+      <div
+        class="relative w-64 h-64 rounded-lg overflow-hidden shadow-xl shadow-black/50 group-hover:shadow-accent/20 transition-all duration-300"
+      >
+        <img
+          src={`${import.meta.env.BASE_URL}/profile.jpg`}
+          alt={profile.name}
+          class="w-full h-full object-cover transition-all duration-500 group-hover:scale-105"
+          loading="lazy"
+        />
+        <div
+          class="absolute inset-0 bg-accent/30 mix-blend-multiply group-hover:bg-transparent transition-all duration-300"
+        >
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

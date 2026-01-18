@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg-primary text-text-primary;
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-text-primary;
+  }
+}
+
+@layer components {
+  .section-container {
+    @apply max-w-4xl mx-auto px-6 py-20 md:py-28;
+  }
+
+  .section-title {
+    @apply text-2xl md:text-3xl font-semibold text-text-primary mb-8;
+  }
+
+  .gradient-text {
+    @apply bg-accent-gradient bg-clip-text text-transparent;
+  }
+
+  .card {
+    @apply bg-bg-secondary border border-white/5 rounded-lg p-6 transition-all duration-300;
+  }
+
+  .card:hover {
+    @apply border-accent/30 bg-bg-tertiary;
+  }
+
+  .btn-primary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white font-medium rounded-lg transition-all duration-200;
+  }
+
+  .btn-primary:hover {
+    @apply bg-accent/90 shadow-lg shadow-accent/25;
+  }
+
+  .btn-secondary {
+    @apply inline-flex items-center gap-2 px-5 py-2.5 border border-white/10 text-text-primary font-medium rounded-lg transition-all duration-200;
+  }
+
+  .btn-secondary:hover {
+    @apply border-accent/50 text-accent;
+  }
+
+  .tag {
+    @apply inline-block px-3 py-1 text-xs font-medium bg-accent/10 text-accent rounded-full;
+  }
+}
+
+@layer utilities {
+  .animate-fade-in {
+    animation: fadeIn 0.5s ease-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.5s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}

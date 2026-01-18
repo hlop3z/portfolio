@@ -5,8 +5,8 @@ import { navigation, profile } from "../data/content";
 <header
   x-data="{ isOpen: false, scrolled: false }"
   x-init="window.addEventListener('scroll', () => { scrolled = window.scrollY > 50 })"
-  :class="{ 'bg-bg-primary/95 backdrop-blur-md shadow-lg shadow-black/10': scrolled }"
-  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+  :class="{ 'md:bg-bg-primary/95 md:backdrop-blur-md md:shadow-lg md:shadow-black/10': scrolled }"
+  class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-bg-primary/95 backdrop-blur-md shadow-lg shadow-black/10 md:bg-transparent md:backdrop-blur-none md:shadow-none"
 >
   <nav class="max-w-4xl mx-auto px-6 py-4">
     <div class="flex items-center justify-between">

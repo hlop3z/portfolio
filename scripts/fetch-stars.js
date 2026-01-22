@@ -12,7 +12,6 @@ const repos = [
   "hlop3z/astroladb",
   "hlop3z/spoc",
   "hlop3z/dinja",
-  "hlop3z/fastberry",
   "dufeutech/uizy",
   "dufeutech/waria",
   "hlop3z/dbcontroller",

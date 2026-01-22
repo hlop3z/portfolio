@@ -92,15 +92,6 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    name: "fastberry",
-    description: "GraphQL  —  Made Easy",
-    longDescription:
-      "A Python package that combines FastAPI and Strawberry to simplify GraphQL development. Build GraphQL APIs quickly with a clean, intuitive interface.",
-    tech: ["Python", "FastAPI", "GraphQL", "Strawberry"],
-    github: "https://github.com/hlop3z/fastberry",
-    featured: true,
-  },
-  {
     name: "uizy",
     description: "Small footprint, big impact",
     longDescription:
